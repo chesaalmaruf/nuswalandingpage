@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baju Anak - Nuswa Clothing</title>
-    <link rel="stylesheet" href="../st/anak.css">
+    <link rel="stylesheet" href="../st/pagesst.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
@@ -20,9 +21,9 @@
             <ul>
                 <li><a href="../index.html">HOME</a></li>
                 <li><a href="#" class="active">BAJU ANAK</a></li>
-                <li><a href="#">JERSEY</a></li>
-                <li><a href="#">HIJAB</a></li>
-                <li><a href="#">DRESS</a></li>
+                <li><a href="jersey.html">JERSEY</a></li>
+                <li><a href="hijab.html">HIJAB</a></li>
+                <li><a href="dress.html">DRESS</a></li>
             </ul>
         </nav>
 
@@ -32,7 +33,7 @@
                 <a href="#"><i class="fas fa-shopping-bag"></i></a>
                 <a href="#"><i class="fab fa-tiktok"></i></a>
             </div>
-            <a href="#" class="btn-black">HUBUNGI KAMI</a>
+            <a href="#" class="btn-black btn-contact" style="font-weight: bold; font-size: 0.8rem;">HUBUNGI KAMI</a>
         </div>
     </header>
 
@@ -46,7 +47,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#produk" class="btn-gray">LIHAT KOLEKSI</a>
-                    <a href="#" class="btn-black">BELANJA SEKARANG</a>
+                    <button class="btn-black btn-belanja" style="border:none; cursor:pointer;">BELANJA SEKARANG</button>
                 </div>
             </div>
             <div class="hero-image">
@@ -70,8 +71,8 @@
                     </div>
                     <p class="price">Rp 45.000</p>
                     <div class="buy-buttons">
-                        <a href="#" class="btn-shopee">🛍️ BELI DI SHOPEE</a>
-                        <a href="#" class="btn-tokped">🛍️ BELI DI TOKOPEDIA</a>
+                        <a href="#" class="btn-shopee btn-belanja">🛍️ BELI DI SHOPEE</a>
+                        <a href="#" class="btn-tokped btn-belanja">🛍️ BELI DI TOKOPEDIA</a>
                     </div>
                 </div>
 
@@ -84,8 +85,8 @@
                     </div>
                     <p class="price">Rp 85.000</p>
                     <div class="buy-buttons">
-                        <a href="#" class="btn-shopee">🛍️ BELI DI SHOPEE</a>
-                        <a href="#" class="btn-tokped">🛍️ BELI DI TOKOPEDIA</a>
+                        <a href="#" class="btn-shopee btn-belanja">🛍️ BELI DI SHOPEE</a>
+                        <a href="#" class="btn-tokped btn-belanja">🛍️ BELI DI TOKOPEDIA</a>
                     </div>
                 </div>
 
@@ -98,13 +99,84 @@
                     </div>
                     <p class="price">Rp 110.000</p>
                     <div class="buy-buttons">
-                        <a href="#" class="btn-shopee">🛍️ BELI DI SHOPEE</a>
-                        <a href="#" class="btn-tokped">🛍️ BELI DI TOKOPEDIA</a>
+                        <a href="#" class="btn-shopee btn-belanja">🛍️ BELI DI SHOPEE</a>
+                        <a href="#" class="btn-tokped btn-belanja">🛍️ BELI DI TOKOPEDIA</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div id="shopModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Pilih Platform Belanja</h2>
+            <p>Kunjungi toko resmi Nuswa Clothing di:</p>
+            <div class="modal-buttons">
+                <a href="#" target="_blank" class="btn-modal-shopee"><i class="fas fa-shopping-bag"></i> Shopee</a>
+                <a href="#" target="_blank" class="btn-modal-tokped"><i class="fab fa-tiktok"></i> Tokopedia</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Hubungi Kami</h2>
+            <p>Pilih layanan untuk terhubung dengan admin kami:</p>
+            <div class="modal-buttons">
+                <a href="https://wa.me/628123456789" target="_blank" class="btn-modal-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:email@nuswaclothing.com" class="btn-modal-email"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ambil elemen modal
+        var shopModal = document.getElementById("shopModal");
+        var contactModal = document.getElementById("contactModal");
+
+        // Ambil tombol pemicu
+        var shopBtns = document.querySelectorAll(".btn-belanja");
+        var contactBtns = document.querySelectorAll(".btn-contact");
+
+        // Ambil semua tombol close (X)
+        var closeSpans = document.querySelectorAll(".close-modal");
+
+        // Buka Pop-up Belanja
+        shopBtns.forEach(function(btn) {
+            btn.onclick = function(e) {
+                e.preventDefault(); // Mencegah layar melompat
+                shopModal.style.display = "flex";
+            }
+        });
+
+        // Buka Pop-up Hubungi Kami
+        contactBtns.forEach(function(btn) {
+            btn.onclick = function(e) {
+                e.preventDefault();
+                contactModal.style.display = "flex";
+            }
+        });
+
+        // Tutup Pop-up saat (X) diklik
+        closeSpans.forEach(function(span) {
+            span.onclick = function() {
+                shopModal.style.display = "none";
+                contactModal.style.display = "none";
+            }
+        });
+
+        // Tutup Pop-up saat klik di luar kotak
+        window.onclick = function(event) {
+            if (event.target == shopModal) {
+                shopModal.style.display = "none";
+            }
+            if (event.target == contactModal) {
+                contactModal.style.display = "none";
+            }
+        }
+    </script>
 
 </body>
 

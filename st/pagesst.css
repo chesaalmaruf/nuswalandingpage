@@ -1,0 +1,562 @@
+/* ==========================================================================
+   --- GLOBAL STYLES (Diadopsi dari CSS Utama Bos) ---
+   ========================================================================== */
+
+:root {
+    --primary-color: #f39c12;
+    --black-color: #000;
+    --white-color: #fff;
+    --transition-speed: 0.4s;
+    --smooth-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f7fb 0%, #e6f1f8 100%);
+    color: #333;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ==========================================================================
+   --- HEADER / NAVIGATION (Posisi & Visual Konsisten dengan style.css) ---
+   ========================================================================== */
+
+.main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    background: transparent;
+    box-shadow: none;
+    z-index: 1000;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.brand-logo {
+    height: 170px;
+    width: auto;
+    border-radius: 5px;
+    transition: transform var(--transition-speed) var(--smooth-ease);
+}
+
+.brand-logo:hover {
+    transform: scale(1.05);
+}
+
+.nav-links ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    transition: color var(--transition-speed) var(--smooth-ease);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    font-size: 1.2rem;
+    color: var(--white-color);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    transition: color var(--transition-speed) var(--smooth-ease);
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+}
+
+.btn-black {
+    background-color: var(--black-color);
+    color: var(--white-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color var(--transition-speed);
+}
+
+.btn-black:hover {
+    background-color: #333;
+}
+
+
+/* ==========================================================================
+   --- HERO SECTION (Posisi Teks Disejajarkan dengan style.css) ---
+   ========================================================================== */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+    padding: 0 5%;
+    margin-top: 60px;
+    color: var(--white-color);
+    text-align: left;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: var(--white-color);
+    font-style: italic;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: var(--white-color);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h1 span {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.description {
+    font-size: 0.95rem;
+    color: #eee;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 90%;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-gray {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgba(229, 238, 244, 0.95);
+    color: #333;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-speed) var(--smooth-ease);
+}
+
+.btn-gray:hover {
+    background-color: rgba(229, 238, 244, 1);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-buttons .btn-black {
+    padding: 12px 28px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-speed) var(--smooth-ease);
+}
+
+.hero-buttons .btn-black:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================================================
+   --- FEATURED PRODUCTS SECTION ---
+   ========================================================================== */
+
+.featured-products {
+    background-color: #fff;
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.section-title p {
+    color: #888;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: var(--white-color);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: all var(--transition-speed) var(--smooth-ease);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.product-desc {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.product-desc p {
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================================================
+   --- TOMBOL E-COMMERCE ---
+   ========================================================================== */
+
+.buy-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-shopee,
+.btn-tokped {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    color: var(--white-color);
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all var(--transition-speed) var(--smooth-ease);
+}
+
+.btn-shopee {
+    background-color: #ee4d2d;
+}
+
+.btn-tokped {
+    background-color: #00aa5b;
+}
+
+.btn-shopee:hover,
+.btn-tokped:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-shopee:active,
+.btn-tokped:active {
+    transform: scale(0.98);
+}
+
+
+/* ==========================================================================
+   --- POP-UP MODAL (ELEGAN - Diadopsi dari style.css) ---
+   ========================================================================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    animation: modalFadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.close-modal {
+    color: #aaa;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color var(--transition-speed);
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-modal-shopee,
+.btn-modal-tokped {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    color: var(--white-color);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all var(--transition-speed) var(--smooth-ease);
+}
+
+.btn-modal-shopee {
+    background-color: #ee4d2d;
+}
+
+.btn-modal-tokped {
+    background-color: #00aa5b;
+}
+
+.btn-modal-shopee:hover,
+.btn-modal-tokped:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+}
+
+.btn-modal-shopee:active,
+.btn-modal-tokped:active {
+    transform: translateY(0);
+}
+
+.btn-modal-wa,
+.btn-modal-email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    color: var(--white-color);
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all var(--transition-speed) var(--smooth-ease);
+}
+
+.btn-modal-wa {
+    background-color: #25D366;
+}
+
+.btn-modal-email {
+    background-color: #333333;
+}
+
+.btn-modal-wa:hover,
+.btn-modal-email:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+}
+
+.btn-modal-wa:active,
+.btn-modal-email:active {
+    transform: translateY(0);
+}
+
+
+/* ==========================================================================
+   --- RESPONSIVE DESIGN (Penyesuaian HP) ---
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 5%;
+        margin-top: 0;
+    }
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    .description {
+        margin: 0 auto 30px auto;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    nav ul {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-card img {
+        height: 250px;
+    }
+}
