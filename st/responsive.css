@@ -1,23 +1,168 @@
-/* responsive.css */
+/* ==========================================================================
+   responsive.css (Layout Mobile Premium ala Uniqlo)
+   ========================================================================== */
 
 @media (max-width: 900px) {
-    .hero-content-wrapper {
-        padding-left: 5%;
-        text-align: center;
+    /* 1. Reset Lebar Layar */
+    html,
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    /* =========================================================
+       2. HEADER & NAVIGASI HORIZONTAL (SWIPEABLE)
+       ========================================================= */
+    .main-header {
+        flex-wrap: wrap;
+        /* Izinkan elemen turun ke baris baru */
+        height: auto;
+        padding: 15px 5% 5px 5%;
+        /* Sedikit gradasi gelap di atas agar logo & menu selalu terbaca */
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+    }
+    /* Baris Atas: Logo Kiri, Ikon Kanan */
+    .logo-link {
+        order: 1;
+    }
+    .brand-logo {
+        height: 45px;
+        /* Ukuran disesuaikan agar proporsional di HP */
+    }
+    .header-actions {
+        order: 2;
+        gap: 15px;
+        /* Jarak antara ikon sosial dan tombol Hubungi Kami */
+    }
+    /* Sembunyikan tombol Hamburger karena kita pakai menu geser */
+    .menu-toggle {
+        display: none !important;
+    }
+    /* Tampilkan kembali Ikon Sosial yang sempat di-hidden */
+    .social-icons {
+        display: flex !important;
+        gap: 12px;
+    }
+    .social-icons a {
+        font-size: 1.1rem;
+    }
+    .btn-contact {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+    /* Baris Bawah: Menu Navigasi Berbaris Menyamping */
+    .nav-links {
+        order: 3;
+        display: block !important;
+        position: relative;
+        /* Batalkan posisi absolut hamburger */
+        top: 0;
+        left: 0 !important;
+        width: 100%;
+        background: transparent;
+        padding: 15px 0 5px 0;
+        /* Ini kunci efek Swipe Uniqlo */
+        overflow-x: auto;
+        white-space: nowrap;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar {
+        display: none;
+        /* Hilangkan garis scroll di Chrome/Safari */
+    }
+    .nav-links ul {
+        flex-direction: row !important;
+        /* Jejerkan ke samping */
+        gap: 30px;
+        /* Jarak antar menu (HOME, BAJU ANAK, dll) */
+        padding-right: 20px;
+        /* Jarak ujung kanan saat mentok di-scroll */
+    }
+    .nav-links a {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        padding-bottom: 5px;
+    }
+    /* Efek Garis Bawah di Menu Aktif ala Uniqlo */
+    .nav-links a.active {
+        border-bottom: 2px solid var(--white-color);
+        color: var(--white-color);
+    }
+    /* =========================================================
+       3. HERO SECTION (TEKS DI POJOK KIRI BAWAH)
+       ========================================================= */
+    .hero,
+    .hero-section {
+        align-items: flex-end;
+        /* Memaksa kotak teks jatuh ke bawah layar */
+        padding-bottom: 12vh;
+        /* Jarak dari bawah layar */
+    }
+    .hero-content {
+        width: 100%;
         max-width: 100%;
-        width: 90%;
-        margin: 0 auto;
+        text-align: left;
+        /* Rata kiri penuh */
+        padding: 0 5%;
+        margin-top: 0;
     }
-    h1 {
-        font-size: 2.8rem;
+    .tagline {
+        font-size: 0.85rem;
     }
+    .hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 8px;
+    }
+    .description {
+        font-size: 0.85rem;
+        text-align: left;
+        margin: 0 0 20px 0;
+        max-width: 90%;
+        /* Trik rahasia: batasi deskripsi max 3 baris di HP agar tidak menutupi gambar */
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    /* Teks Diskon di Halaman Home */
+    .price-discount {
+        font-size: 2.5rem;
+    }
+    /* =========================================================
+       4. TOMBOL HERO (BERDAMPINGAN RAPI DI KIRI)
+       ========================================================= */
+    .hero-buttons,
     .cta-buttons {
-        justify-content: center;
+        justify-content: flex-start;
+        /* Nempel ke kiri */
+        flex-direction: row;
+        /* Berbaris ke samping */
+        flex-wrap: wrap;
+        /* Kalau layar terlalu sempit baru turun */
+        gap: 10px;
+    }
+    /* Ukuran tombol di-resize agar muat berdampingan di HP */
+    .hero-buttons .btn-gray,
+    .hero-buttons .btn-black,
+    .cta-buttons .btn-primary {
+        width: auto;
+        padding: 10px 18px;
+        font-size: 0.75rem;
     }
 }
+
+
+/* Batasan khusus untuk layar HP super kecil (misal iPhone lama) */
 
 @media (max-width: 480px) {
     .product-grid {
         grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .nav-links ul {
+        gap: 20px;
+        /* Menu sedikit dirapatkan */
     }
 }
