@@ -1,0 +1,10 @@
+/* style.css (Main File) */
+
+@import url('st/variables.css');
+@import url('st/base.css');
+@import url('st/header.css');
+@import url('st/hero.css');
+@import url('st/products.css');
+@import url('st/modal.css');
+@import url('st/navigation.css');
+@import url('st/responsive.css');

@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuswa Clothing | Lookbook</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="st/style.css">
+    <link rel="stylesheet" href="mainpage.css">
 </head>
 
 <body>
     <header class="main-header">
         <a href="#home" class="logo-link">
-            <img src="/pct/NUSWA LOGO.png" alt="Logo Nuswa Clothing" class="brand-logo">
+            <img src="pct/NUSWA LOGO.png" alt="Logo Nuswa Clothing" class="brand-logo">
         </a>
 
         <nav class="nav-links">
             <ul>
-                <li><a href="#" class="active">HOME</a></li>
+                <li><a href="#home" class="active">HOME</a></li>
                 <li><a href="pg/anak.html">BAJU ANAK</a></li>
                 <li><a href="pg/jersey.html">JERSEY</a></li>
                 <li><a href="pg/hijab.html">HIJAB</a></li>
@@ -52,9 +52,6 @@
 
                 <div class="cta-buttons">
                     <button class="btn-primary btn-belanja">BELANJA SEKARANG</button>
-                </div>
-                <div>
-
                 </div>
             </div>
         </section>
@@ -144,15 +141,15 @@
         </section>
 
     </main>
+
     <div class="scroll-dots">
         <div class="dot active" data-target="home"></div>
         <div class="dot" data-target="baju-anak"></div>
         <div class="dot" data-target="jersey"></div>
+        <div class="dot" data-target="dress"></div>
         <div class="dot" data-target="hijab"></div>
     </div>
 
-
-    </main>
     <div id="shopModal" class="modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -177,139 +174,7 @@
         </div>
     </div>
 
-    <script>
-        // Ambil elemen modal
-        var shopModal = document.getElementById("shopModal");
-        var contactModal = document.getElementById("contactModal");
-
-        // Ambil tombol pemicu
-        var shopBtns = document.querySelectorAll(".btn-belanja");
-        var contactBtns = document.querySelectorAll(".btn-contact"); // Pastikan tombol hubungi kami punya class "btn-contact"
-
-        // Ambil semua tombol close (X)
-        var closeSpans = document.querySelectorAll(".close-modal");
-
-        // Buka Pop-up Belanja
-        shopBtns.forEach(function(btn) {
-            btn.onclick = function(e) {
-                e.preventDefault(); // Mencegah layar melompat ke atas
-                shopModal.style.display = "flex";
-            }
-        });
-
-        // Buka Pop-up Hubungi Kami
-        contactBtns.forEach(function(btn) {
-            btn.onclick = function(e) {
-                e.preventDefault();
-                contactModal.style.display = "flex";
-            }
-        });
-
-        // Tutup Pop-up saat (X) diklik
-        closeSpans.forEach(function(span) {
-            span.onclick = function() {
-                shopModal.style.display = "none";
-                contactModal.style.display = "none";
-            }
-        });
-
-        // Tutup Pop-up saat klik di luar kotak
-        window.onclick = function(event) {
-            if (event.target == shopModal) {
-                shopModal.style.display = "none";
-            }
-            if (event.target == contactModal) {
-                contactModal.style.display = "none";
-            }
-        }
-    </script>
-
-
-    <div id="hubungikami" class="modal">
-
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Pilih Platform Belanja</h2>
-
-            <p>Kunjungi toko resmi Nuswa Clothing di:</p>
-
-            <div class="modal-buttons">
-                <a href="#" target="_blank" class="btn-modal-shopee"><i class="fas fa-shopping-bag"></i> Shopee</a>                 <a href="#" target="_blank" class="btn-modal-tokped"><i class="fab fa-tiktok"></i> Tokopedia</a>           </div>
-        </div>
-    </div>
-
-
-    <script>
-        var modal = document.getElementById("shopModal");     // Ambil semua tombol belanja agar pop-up muncul di kategori mana saja
-            
-        var btns = document.querySelectorAll(".btn-belanja");    
-        var span = document.getElementsByClassName("close-modal")[0];
-
-            
-        btns.forEach(function(btn) {      
-            btn.onclick = function() {        
-                modal.style.display = "flex";      
-            }    
-        });    
-        span.onclick = function() {      
-            modal.style.display = "none";    
-        }    
-        window.onclick = function(event) {      
-            if (event.target == modal) {        
-                modal.style.display = "none";      
-            }    
-        }
-    </script>
-
-    <div id="shopModal" class="modal">
-
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Pilih Platform Belanja</h2>
-
-            <p>Kunjungi toko resmi Nuswa Clothing di:</p>
-
-            <div class="modal-buttons">
-                <a href="#" target="_blank" class="btn-modal-shopee"><i class="fas fa-shopping-bag"></i> Shopee</a>                 <a href="#" target="_blank" class="btn-modal-tokped"><i class="fab fa-tiktok"></i> Tokopedia</a>           </div>
-        </div>
-    </div>
-
-
-    <script>
-        // Logika Titik Menyala (Scroll Tracker)
-        const scrollContainer = document.querySelector('.scroll-container');
-        const sections = document.querySelectorAll('.hero-section');
-        const dots = document.querySelectorAll('.dot');
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Hapus aktif dari semua titik
-                    dots.forEach(dot => dot.classList.remove('active'));
-
-                    // Tambahkan aktif ke titik yang sesuai dengan halaman saat ini
-                    const activeDot = document.querySelector(`.dot[data-target="${entry.target.id}"]`);
-                    if (activeDot) activeDot.classList.add('active');
-                }
-            });
-        }, {
-            root: scrollContainer,
-            threshold: 0.5 // Memicu pergantian saat 50% gambar sudah masuk layar
-        });
-
-        sections.forEach(section => observer.observe(section));
-
-        // Membuat titik bisa diklik
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                const target = document.getElementById(dot.getAttribute('data-target'));
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-
+    <script src="js/script.js"></script>
 </body>
 
 </html>

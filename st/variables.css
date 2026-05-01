@@ -1,0 +1,10 @@
+/* variables.css */
+
+:root {
+    --primary-color: #f39c12;
+    --black-color: #000;
+    --white-color: #fff;
+    --text-muted: #ddd;
+    --transition-speed: 0.4s;
+    --smooth-ease: cubic-bezier(0.4, 0, 0.2, 1);
+}

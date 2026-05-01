@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baju Anak - Nuswa Clothing</title>
-    <link rel="stylesheet" href="../st/pagesst.css">
+
+    <link rel="stylesheet" href="../pagesst.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -14,7 +16,7 @@
 
     <header class="main-header">
         <a href="../index.html" class="logo-link">
-            <img src="/pct/NUSWA LOGO.png" alt="Logo Nuswa Clothing" class="brand-logo">
+            <img src="../pct/NUSWA LOGO.png" alt="Logo Nuswa Clothing" class="brand-logo">
         </a>
 
         <nav class="nav-links">
@@ -71,8 +73,8 @@
                     </div>
                     <p class="price">Rp 45.000</p>
                     <div class="buy-buttons">
-                        <a href="#" class="btn-shopee btn-belanja">🛍️ BELI DI SHOPEE</a>
-                        <a href="#" class="btn-tokped btn-belanja">🛍️ BELI DI TOKOPEDIA</a>
+                        <a href="#" class="btn-shopee ">🛍️ BELI DI SHOPEE</a>
+                        <a href="#" class="btn-tokped ">🛍️ BELI DI TOKOPEDIA</a>
                     </div>
                 </div>
 
@@ -85,8 +87,8 @@
                     </div>
                     <p class="price">Rp 85.000</p>
                     <div class="buy-buttons">
-                        <a href="#" class="btn-shopee btn-belanja">🛍️ BELI DI SHOPEE</a>
-                        <a href="#" class="btn-tokped btn-belanja">🛍️ BELI DI TOKOPEDIA</a>
+                        <a href="#" class="btn-shopee ">🛍️ BELI DI SHOPEE</a>
+                        <a href="#" class="btn-tokped ">🛍️ BELI DI TOKOPEDIA</a>
                     </div>
                 </div>
 
@@ -99,8 +101,8 @@
                     </div>
                     <p class="price">Rp 110.000</p>
                     <div class="buy-buttons">
-                        <a href="#" class="btn-shopee btn-belanja">🛍️ BELI DI SHOPEE</a>
-                        <a href="#" class="btn-tokped btn-belanja">🛍️ BELI DI TOKOPEDIA</a>
+                        <a href="#" class="btn-shopee ">🛍️ BELI DI SHOPEE</a>
+                        <a href="#" class="btn-tokped ">🛍️ BELI DI TOKOPEDIA</a>
                     </div>
                 </div>
             </div>
@@ -131,52 +133,7 @@
         </div>
     </div>
 
-    <script>
-        // Ambil elemen modal
-        var shopModal = document.getElementById("shopModal");
-        var contactModal = document.getElementById("contactModal");
-
-        // Ambil tombol pemicu
-        var shopBtns = document.querySelectorAll(".btn-belanja");
-        var contactBtns = document.querySelectorAll(".btn-contact");
-
-        // Ambil semua tombol close (X)
-        var closeSpans = document.querySelectorAll(".close-modal");
-
-        // Buka Pop-up Belanja
-        shopBtns.forEach(function(btn) {
-            btn.onclick = function(e) {
-                e.preventDefault(); // Mencegah layar melompat
-                shopModal.style.display = "flex";
-            }
-        });
-
-        // Buka Pop-up Hubungi Kami
-        contactBtns.forEach(function(btn) {
-            btn.onclick = function(e) {
-                e.preventDefault();
-                contactModal.style.display = "flex";
-            }
-        });
-
-        // Tutup Pop-up saat (X) diklik
-        closeSpans.forEach(function(span) {
-            span.onclick = function() {
-                shopModal.style.display = "none";
-                contactModal.style.display = "none";
-            }
-        });
-
-        // Tutup Pop-up saat klik di luar kotak
-        window.onclick = function(event) {
-            if (event.target == shopModal) {
-                shopModal.style.display = "none";
-            }
-            if (event.target == contactModal) {
-                contactModal.style.display = "none";
-            }
-        }
-    </script>
+    <script src="../js/script.js"></script>
 
 </body>
 

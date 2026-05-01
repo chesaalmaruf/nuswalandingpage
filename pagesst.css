@@ -1,0 +1,21 @@
+/* ==========================================================================
+   style-kategori.css (Main File untuk Halaman Sub-Kategori)
+   Menggabungkan CSS Global Utama + CSS Khusus Kategori
+   ========================================================================== */
+
+
+/* 1. Import Bagian Global (Diambil dari desain halaman utama) */
+
+@import url('st/variables.css');
+@import url('st/base.css');
+@import url('st/header.css');
+@import url('st/modal.css');
+@import url('st/products.css');
+
+/* 2. Import Desain Khusus Halaman Kategori */
+
+@import url('st/kategori.css');
+
+/* 3. Import Responsive Global */
+
+@import url('st/responsive.css');

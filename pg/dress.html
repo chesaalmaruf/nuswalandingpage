@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dress - Nuswa Clothing</title>
-    <link rel="stylesheet" href="../st/pagesst.css">
+    <title>Baju Anak - Nuswa Clothing</title>
+
+    <link rel="stylesheet" href="../pagesst.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
     <header class="main-header">
         <a href="../index.html" class="logo-link">
-            <img src="/pct/NUSWA LOGO.png" alt="Logo Nuswa Clothing" class="brand-logo">
+            <img src="../pct/NUSWA LOGO.png" alt="Logo Nuswa Clothing" class="brand-logo">
         </a>
 
         <nav class="nav-links">
@@ -32,7 +35,7 @@
                 <a href="#"><i class="fas fa-shopping-bag"></i></a>
                 <a href="#"><i class="fab fa-tiktok"></i></a>
             </div>
-            <a href="#" class="btn-black">HUBUNGI KAMI</a>
+            <a href="#" class="btn-black btn-contact" style="font-weight: bold; font-size: 0.8rem;">HUBUNGI KAMI</a>
         </div>
     </header>
 
@@ -46,7 +49,7 @@
                 </p>
                 <div class="hero-buttons">
                     <a href="#produk" class="btn-gray">LIHAT KOLEKSI</a>
-                    <a href="#" class="btn-black">BELANJA SEKARANG</a>
+                    <button class="btn-black btn-belanja" style="border:none; cursor:pointer;">BELANJA SEKARANG</button>
                 </div>
             </div>
             <div class="hero-image">
@@ -70,8 +73,8 @@
                     </div>
                     <p class="price">Rp 45.000</p>
                     <div class="buy-buttons">
-                        <a href="#" class="btn-shopee">🛍️ BELI DI SHOPEE</a>
-                        <a href="#" class="btn-tokped">🛍️ BELI DI TOKOPEDIA</a>
+                        <a href="#" class="btn-shopee btn-belanja">🛍️ BELI DI SHOPEE</a>
+                        <a href="#" class="btn-tokped btn-belanja">🛍️ BELI DI TOKOPEDIA</a>
                     </div>
                 </div>
 
@@ -84,8 +87,8 @@
                     </div>
                     <p class="price">Rp 85.000</p>
                     <div class="buy-buttons">
-                        <a href="#" class="btn-shopee">🛍️ BELI DI SHOPEE</a>
-                        <a href="#" class="btn-tokped">🛍️ BELI DI TOKOPEDIA</a>
+                        <a href="#" class="btn-shopee btn-belanja">🛍️ BELI DI SHOPEE</a>
+                        <a href="#" class="btn-tokped btn-belanja">🛍️ BELI DI TOKOPEDIA</a>
                     </div>
                 </div>
 
@@ -98,13 +101,39 @@
                     </div>
                     <p class="price">Rp 110.000</p>
                     <div class="buy-buttons">
-                        <a href="#" class="btn-shopee">🛍️ BELI DI SHOPEE</a>
-                        <a href="#" class="btn-tokped">🛍️ BELI DI TOKOPEDIA</a>
+                        <a href="#" class="btn-shopee btn-belanja">🛍️ BELI DI SHOPEE</a>
+                        <a href="#" class="btn-tokped btn-belanja">🛍️ BELI DI TOKOPEDIA</a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <div id="shopModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Pilih Platform Belanja</h2>
+            <p>Kunjungi toko resmi Nuswa Clothing di:</p>
+            <div class="modal-buttons">
+                <a href="#" target="_blank" class="btn-modal-shopee"><i class="fas fa-shopping-bag"></i> Shopee</a>
+                <a href="#" target="_blank" class="btn-modal-tokped"><i class="fab fa-tiktok"></i> Tokopedia</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Hubungi Kami</h2>
+            <p>Pilih layanan untuk terhubung dengan admin kami:</p>
+            <div class="modal-buttons">
+                <a href="https://wa.me/628123456789" target="_blank" class="btn-modal-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="mailto:email@nuswaclothing.com" class="btn-modal-email"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
 
 </body>
 

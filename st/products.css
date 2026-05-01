@@ -1,0 +1,88 @@
+/* products.css */
+
+.featured-products {
+    background-color: var(--white-color);
+    padding: 80px 5%;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #222;
+    font-weight: 300;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white-color);
+    border-radius: 10px;
+    padding: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-speed) var(--smooth-ease);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 15px 0;
+}
+
+.buy-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.btn-shopee,
+.btn-tokped {
+    padding: 15px;
+    color: var(--white-color);
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all var(--transition-speed) var(--smooth-ease);
+}
+
+.btn-shopee {
+    background-color: #ee4d2d;
+}
+
+.btn-tokped {
+    background-color: #00aa5b;
+}
+
+.btn-shopee:hover,
+.btn-tokped:hover {
+    transform: scale(1.03);
+    filter: brightness(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-shopee:active,
+.btn-tokped:active {
+    transform: scale(0.98);
+}
