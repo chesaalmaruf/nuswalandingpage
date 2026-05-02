@@ -84,9 +84,11 @@
         padding-bottom: 5px;
     }
     /* Efek Garis Bawah di Menu Aktif ala Uniqlo */
+    /* Efek Warna Asli di Menu Aktif (Kuning/Primary Color) */
     .nav-links a.active {
-        border-bottom: 2px solid var(--white-color);
-        color: var(--white-color);
+        border-bottom: none;
+        color: var(--primary-color);
+        /* menjadikan halaman yang aktif mejadi kuinng */
     }
     /* =========================================================
        3. HERO SECTION (TEKS DI POJOK KIRI BAWAH)
