@@ -1,4 +1,5 @@
 // Fungsi murni untuk membuka dan menutup modal agar bisa dites
+// --- KODE LAMA (BIARKAN) ---
 function openModalAction(modalElement) {
     if (modalElement) modalElement.style.display = "flex";
 }
@@ -7,9 +8,25 @@ function closeModalAction(modalElement) {
     if (modalElement) modalElement.style.display = "none";
 }
 
-// Ekspor fungsi agar bisa dibaca oleh Jest (tanpa merusak web asli)
+// --- KODE BARU (TAMBAHKAN INI) ---
+// Fungsi murni untuk Hamburger Menu agar bisa dites
+function toggleMenuAction(menuToggle, navLinks) {
+    if (!menuToggle || !navLinks) return;
+
+    navLinks.classList.toggle('active');
+
+    if (navLinks.classList.contains('active')) {
+        menuToggle.classList.remove('fa-bars');
+        menuToggle.classList.add('fa-times'); // Ikon silang
+    } else {
+        menuToggle.classList.remove('fa-times');
+        menuToggle.classList.add('fa-bars'); // Ikon garis tiga
+    }
+}
+
+// Update Ekspor agar Jest bisa membaca ke-3 fungsi tersebut
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { openModalAction, closeModalAction };
+    module.exports = { openModalAction, closeModalAction, toggleMenuAction };
 }
 /**
  * Nuswa Clothing - Main Script
