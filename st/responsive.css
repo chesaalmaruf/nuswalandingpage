@@ -71,11 +71,14 @@
     }
     .nav-links ul {
         flex-direction: row !important;
-        /* Jejerkan ke samping */
-        gap: 45px;
-        /* Jarak antar menu (HOME, BAJU ANAK, dll) */
-        padding-right: 20px;
-        /* Jarak ujung kanan saat mentok di-scroll */
+        justify-content: space-between;
+        /* KUNCI: Membuat rata dari ujung kiri ke kanan */
+        width: 100%;
+        padding: 0;
+        /* Hapus padding kanan/kiri agar presisi */
+        margin: 0;
+        gap: 0;
+        /* Hapus gap karena sudah pakai space-between */
     }
     .nav-links a {
         font-size: 0.85rem;
@@ -96,7 +99,7 @@
     .hero-section {
         align-items: flex-end;
         /* Memaksa kotak teks jatuh ke bawah layar */
-        padding-bottom: 12vh;
+        padding-bottom: 22vh;
         /* Jarak dari bawah layar */
     }
     .hero-content {
