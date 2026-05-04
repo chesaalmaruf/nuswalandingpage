@@ -60,7 +60,7 @@
         width: 100%;
         background: transparent;
         padding: 15px 0 5px 0;
-        /* Ini kunci efek Swipe Uniqlo */
+        /*efek Swipe */
         overflow-x: auto;
         white-space: nowrap;
         -ms-overflow-style: none;
@@ -68,12 +68,11 @@
     }
     .nav-links::-webkit-scrollbar {
         display: none;
-        /* Hilangkan garis scroll di Chrome/Safari */
     }
     .nav-links ul {
         flex-direction: row !important;
         /* Jejerkan ke samping */
-        gap: 40px;
+        gap: 45px;
         /* Jarak antar menu (HOME, BAJU ANAK, dll) */
         padding-right: 20px;
         /* Jarak ujung kanan saat mentok di-scroll */
