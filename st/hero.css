@@ -146,3 +146,32 @@
     font-weight: 600;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
+
+/* ==========================================================================
+   TOMBOL KHUSUS SECTION COSTUME
+   ========================================================================== */
+.btn-costume {
+    display: inline-block;
+    background-color: var(--primary-color); /* Memakai aksen warna kuning/orange Nuswa */
+    color: #111; /* Teks gelap agar kontras dan terbaca jelas */
+    padding: 14px 35px; /* Dibuat lebih besar secara proporsional */
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    /* KUNCI: Mencegah tombol ditarik memanjang 100% di layar HP */
+    width: max-content !important; 
+    
+    transition: all var(--transition-speed) var(--smooth-ease);
+    box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4); /* Efek cahaya di bawah tombol */
+}
+
+.btn-costume:hover {
+    background-color: #e67e22; /* Sedikit lebih gelap saat disentuh */
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(243, 156, 18, 0.6);
+    color: #fff;
+}
